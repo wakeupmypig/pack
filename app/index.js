@@ -1,1 +1,3 @@
-document.write("欢迎大家学习webpack");
+var str  = require('./abc.js');
+require('style!css!./style.css');
+document.write(str);
