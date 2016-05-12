@@ -1,3 +1,18 @@
 var str  = require('./abc.js');
-require('style!css!./style.css');
+require('./style.css');
 document.write(str);
+
+
+
+
+
+
+
+
+
+
+
+
+// define(['./abc.js'],function(str){
+//
+// })
