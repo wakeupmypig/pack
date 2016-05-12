@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --port 8888 --content-base build --inline"
+    "es6": "webpack-dev-server --port 8888 --content-base es6_build --inline --config webpack.es6.config.js",
+    "es6pack":"webpack --config webpack.es6.config.js"
   },
   "author": "",
   "license": "ISC",
