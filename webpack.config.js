@@ -1,5 +1,8 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var openBrowserWebpackPlugin = require('open-browser-webpack-plugin');
+var extractTextWebpackPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
+
 module.exports = {
   //entry:"./app/index.js", //入口文件
   entry:{
@@ -10,7 +13,7 @@ module.exports = {
   output:{                //出口文件
     path:'./build/',      //生产的目录
     //[name]装的就是entry里的名字
-    filename:'[name].js'  //生产的文件名字
+    filename:'[name].[hash:8].js'  //生产的文件名字
   },
   plugins:[
     //自动创建plugin
@@ -20,15 +23,22 @@ module.exports = {
       // 生成页面的文件名字
         template:'./index.html',
       //依赖的js
-        chunks:["ab","bundle"]
+        chunks:["common.js","ab","bundle"]
     }),
     //创建浏览器自动打开路径的插件
-    new openBrowserWebpackPlugin({url:"http://localhost:8888"})
+    new openBrowserWebpackPlugin({url:"http://localhost:8888"}),
+    new extractTextWebpackPlugin("bundle.css?[hash]"),
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
   ],
   module:{   //模块的导入方式
     loaders:[ //所有的加载器
         //匹配所有的css进行css和style的配置
-        {test:/\.css$/,loaders:["style","css"]},
+        {test:/\.css$/,loader:extractTextWebpackPlugin.extract("style","css")},
         {test:/\.(jpg|png|gif)$/,loaders:["url?limit=8000"]}
     ]
   },
