@@ -1,5 +1,6 @@
-var str  = require('./abc.js');
-require('./style.css');
+var str  = require('./abc');
+require('./style');
+require('pack');
 document.write(str);
 
 

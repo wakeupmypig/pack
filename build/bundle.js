@@ -44,16 +44,31 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var str  = __webpack_require__(1);
-	// define(['./abc.js'],function(str){
-	//
-	// })
-	__webpack_require__(2);
+	var str  = __webpack_require__(3);
+	__webpack_require__(4);
+	__webpack_require__(9);
 	document.write(str);
 
 
+
+
+
+
+
+
+
+
+
+
+	// define(['./abc.js'],function(str){
+	//
+	// })
+
+
 /***/ },
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /***/ function(module, exports) {
 
 	var str = "hello new ";
@@ -62,16 +77,16 @@
 
 
 /***/ },
-/* 2 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(3);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -88,12 +103,12 @@
 	}
 
 /***/ },
-/* 3 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
-	exports.i(__webpack_require__(5), "");
+	exports.i(__webpack_require__(7), "");
 
 	// module
 	exports.push([module.id, "body{\r\n  color:red;\r\n}\r\n", ""]);
@@ -102,7 +117,7 @@
 
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/*
@@ -158,10 +173,10 @@
 
 
 /***/ },
-/* 5 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(4)();
+	exports = module.exports = __webpack_require__(6)();
 	// imports
 
 
@@ -172,7 +187,7 @@
 
 
 /***/ },
-/* 6 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -421,6 +436,13 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	console.log(10000);
 
 
 /***/ }
