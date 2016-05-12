@@ -46,7 +46,7 @@
 
 	var str  = __webpack_require__(3);
 	__webpack_require__(4);
-	__webpack_require__(9);
+	__webpack_require__(10);
 	document.write(str);
 
 
@@ -71,7 +71,7 @@
 /* 3 */
 /***/ function(module, exports) {
 
-	var str = "hello new ";
+	var str = "123789";
 	//自动提供模块化的功能
 	module.exports = str;
 
@@ -86,7 +86,7 @@
 	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(8)(content, {});
+	var update = __webpack_require__(9)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -181,13 +181,19 @@
 
 
 	// module
-	exports.push([module.id, "body{\r\n  color:blue;\r\n  background:greenyellow;\r\n}\r\n", ""]);
+	exports.push([module.id, "body{\r\n  color:blue;\r\n  background:greenyellow url(" + __webpack_require__(8) + ");\r\n}\r\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "d67bfa4f556599a2049ee2b07fce46e6.jpg";
+
+/***/ },
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -439,10 +445,10 @@
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
-	console.log(10000);
+	console.log(123123123);
 
 
 /***/ }

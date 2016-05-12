@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"webpack-dev-server --port 8888 --content-base build --inline"
+    "dev": "webpack-dev-server --port 8888 --content-base build --inline"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.16.1",
+    "open-browser-webpack-plugin": "0.0.2",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }
