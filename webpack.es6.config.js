@@ -21,7 +21,8 @@ module.exports = {
   module:{
     loaders:[
         {test:/\.css$/,loader:extractTextWebpackPlugin.extract("style","css")},
-        {test:/\.(jpg|png|gif)$/,loaders:["url?limit=8000"]}
+        {test:/\.(jpg|png|gif)$/,loaders:["url?limit=8000"]},
+        {test:/\.js$/,loader:"babel-loader"}
     ]
   },
   resolve:{
